@@ -10,6 +10,7 @@ class InputWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         width: MediaQuery.of(context).size.width,
+        height: 55,
         child: TextField(
             cursorColor: Colors.grey[600],
             style: TextStyle(color: Colors.grey[600]),
