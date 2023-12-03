@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:finance_app/components/cards/rental_card.dart';
 import 'package:finance_app/components/cards/ticker_card.dart';
 import 'package:finance_app/components/input/input.dart';
@@ -40,8 +42,12 @@ class HomePage extends StatelessWidget {
                 return Column(children: [
                   TickerCardWidget(
                     title: 'Ethereum',
-                    price: 3245.03,
-                    variation: -10.23,
+                    price: Random().nextInt(2) > 0
+                        ? Random().nextDouble() * 5000
+                        : Random().nextDouble() / 1000,
+                    variation: Random().nextInt(2) > 0
+                        ? Random().nextDouble() * 123
+                        : -Random().nextDouble() * 123,
                     symbol: 'ETH',
                     onPressed: () {
                       Navigator.pushNamed(context, '/');

@@ -43,7 +43,7 @@ class TickerCardWidget extends StatelessWidget {
                     const SizedBox(
                       height: 6,
                     ),
-                    Text('R\$ $price',
+                    Text('R\$ ${price.toStringAsFixed(2)}',
                         style: const TextStyle(
                             fontSize: 14,
                             color: Color.fromRGBO(255, 255, 255, 0.5))),
@@ -54,7 +54,7 @@ class TickerCardWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    '$variation%',
+                    '${variation.toStringAsFixed(2)}%',
                     style: TextStyle(
                         color: this.variation > 0
                             ? Colors.green[400]
