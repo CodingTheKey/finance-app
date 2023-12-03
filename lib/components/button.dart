@@ -4,7 +4,7 @@ class ButtonWidget extends StatelessWidget {
   final String title;
   final VoidCallback? onPressed;
 
-  const ButtonWidget({required this.title, this.onPressed});
+  const ButtonWidget({required this.title, this.onPressed, super.key});
 
   final double radii = 8.0;
   @override
@@ -16,7 +16,7 @@ class ButtonWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.0),
             )),
             fixedSize: MaterialStateProperty.all<Size>(
-                Size(MediaQuery.of(context).size.width, 45)),
+                Size(MediaQuery.of(context).size.width, 56)),
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
             overlayColor: MaterialStateProperty.resolveWith<Color?>(
               (Set<MaterialState> states) {

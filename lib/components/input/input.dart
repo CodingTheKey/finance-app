@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 class InputWidget extends StatelessWidget {
   final String placeholder;
   final TextStyle? margin;
-  InputWidget({required this.placeholder, this.margin});
+  final double? height;
+  const InputWidget(
+      {required this.placeholder, this.margin, this.height, super.key});
   static const double radii = 8.0;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
         width: MediaQuery.of(context).size.width,
-        height: 55,
+        height: 56,
         child: TextField(
             cursorColor: Colors.grey[600],
             style: TextStyle(color: Colors.grey[600]),
