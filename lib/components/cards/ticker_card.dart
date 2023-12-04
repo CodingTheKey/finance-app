@@ -53,6 +53,7 @@ class TickerCardWidget extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
+                  // TODO: add plus sign when variation is greater than zero
                   Text(
                     '${variation.toStringAsFixed(2)}%',
                     style: TextStyle(

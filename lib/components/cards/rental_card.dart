@@ -33,9 +33,11 @@ class RentalCardWidget extends StatelessWidget {
                   percent: variation / 100,
                   center: Text(
                     '$variation %',
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w700, fontSize: 14),
                   ),
-                  progressColor: this.color != null ? color : Colors.blue[700],
+                  backgroundColor: const Color.fromRGBO(3, 123, 203, 0.25),
+                  progressColor: color ?? Colors.blue[700],
                 ),
                 const SizedBox(
                   width: 16,
@@ -72,7 +74,6 @@ class RentalCardWidget extends StatelessWidget {
                     Icons.chevron_right,
                     color: Color.fromRGBO(255, 255, 255, 0.5),
                     size: 34.0,
-                    semanticLabel: 'Text to announce in accessibility modes',
                   ),
                 ],
               )

@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
                         : -Random().nextDouble() * 123,
                     symbol: 'ETH',
                     onPressed: () {
-                      Navigator.pushNamed(context, '/');
+                      Navigator.pushNamed(context, '/info');
                     },
                   ),
                   const SizedBox(
@@ -83,15 +83,26 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              RentalCardWidget(title: 'Valorização', variation: 60),
+              RentalCardWidget(
+                title: 'Valorização',
+                variation: 60,
+              ),
               SizedBox(
                 height: 20,
               ),
-              RentalCardWidget(title: 'Valorização', variation: 74),
+              RentalCardWidget(
+                title: 'Valorização',
+                variation: 74,
+                color: Colors.green,
+              ),
               SizedBox(
                 height: 20,
               ),
-              RentalCardWidget(title: 'Valorização', variation: 32),
+              RentalCardWidget(
+                title: 'Valorização',
+                variation: 32,
+                color: Colors.pink,
+              ),
             ],
           )
         ]),
