@@ -1,6 +1,8 @@
+import 'package:finance_app/pages/favorites_page.dart';
 import 'package:finance_app/pages/home_page.dart';
 import 'package:finance_app/pages/info_page.dart';
 import 'package:finance_app/pages/login_page.dart';
+import 'package:finance_app/pages/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,7 +30,9 @@ class MyApp extends StatelessWidget {
         home: const SafeArea(child: LoginPage()),
         routes: {
           '/home': (context) => const SafeArea(child: HomePage()),
-          '/info': (context) => const SafeArea(child: InfoPage())
+          '/info': (context) => const SafeArea(child: InfoPage()),
+          '/favorites': (context) => const SafeArea(child: FavoritesPage()),
+          '/register': (context) => SafeArea(child: RegisterPage()),
         });
   }
 }

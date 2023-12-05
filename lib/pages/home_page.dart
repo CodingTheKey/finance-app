@@ -21,15 +21,25 @@ class HomePage extends StatelessWidget {
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
           ),
           const SizedBox(
-            height: 25,
+            height: 24,
           ),
           const InputWidget(placeholder: 'search'),
           const SizedBox(
             height: 30,
           ),
-          const Align(
-            alignment: Alignment.centerRight,
-            child: Text('Ver Todos'),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/favorites');
+            },
+            child:
+                const Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+              Text('Ver Todos'),
+              Icon(
+                Icons.chevron_right,
+                color: Colors.white,
+                size: 24.0,
+              ),
+            ]),
           ),
           const SizedBox(
             height: 20,
@@ -61,7 +71,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 25,
+            height: 24,
           ),
           const Column(
             children: [
@@ -81,7 +91,7 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 18,
               ),
               RentalCardWidget(
                 title: 'Valorização',

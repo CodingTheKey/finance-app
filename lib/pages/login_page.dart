@@ -60,8 +60,11 @@ class LoginPage extends StatelessWidget {
             'ou',
             style: TextStyle(fontSize: 16),
           ),
-          const ButtonWidget(
+          ButtonWidget(
             title: 'Cadastrar',
+            onPressed: () {
+              Navigator.pushNamed(context, '/register');
+            },
           ),
         ]),
       ),

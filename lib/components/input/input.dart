@@ -1,19 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class InputWidget extends StatelessWidget {
   final String placeholder;
   final TextStyle? margin;
   final double? height;
+  final double? width;
+  final List<MaskTextInputFormatter>? inputFormatters;
+
   const InputWidget(
-      {required this.placeholder, this.margin, this.height, super.key});
+      {required this.placeholder,
+      this.margin,
+      this.height,
+      this.width,
+      this.inputFormatters,
+      super.key});
   static const double radii = 8.0;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: MediaQuery.of(context).size.width,
+        width: width ?? MediaQuery.of(context).size.width,
         height: 56,
         child: TextField(
+            inputFormatters: inputFormatters,
             cursorColor: Colors.grey[600],
             style: TextStyle(color: Colors.grey[600]),
             decoration: InputDecoration(
