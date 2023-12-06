@@ -1,11 +1,28 @@
 import 'package:finance_app/components/button.dart';
 import 'package:finance_app/components/input/input.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+
+  String email = '';
+  String password = '';
 
   static const double radii = 10;
+
+  void _createClient(context) async {
+    try {
+      final _future = await Supabase.instance.client.auth
+          .signInWithPassword(email: email, password: password);
+      Navigator.pushNamed(context, '/home');
+    } catch (error) {
+      final message = error.toString();
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('$message'),
+      ));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,19 +57,25 @@ class LoginPage extends StatelessWidget {
             style: TextStyle(color: Colors.grey[600]),
           ),
           const Padding(padding: EdgeInsets.all(8.0)),
-          const InputWidget(
+          InputWidget(
             placeholder: 'Digite seu email',
+            onChanged: (value) {
+              email = value;
+            },
           ),
           const Padding(padding: EdgeInsets.all(8.0)),
-          const InputWidget(
+          InputWidget(
             placeholder: 'Digite sua senha',
+            onChanged: (value) {
+              password = value;
+            },
           ),
           const Padding(padding: EdgeInsets.all(4.0)),
           const Text('esqueceu a senha?'),
           const Padding(padding: EdgeInsets.all(12.0)),
           ButtonWidget(
             onPressed: () {
-              Navigator.pushNamed(context, '/home');
+              _createClient(context);
             },
             title: 'Entrar',
           ),

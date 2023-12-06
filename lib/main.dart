@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
               bodySmall: TextStyle(color: Colors.white)),
           useMaterial3: true,
         ),
-        home: const SafeArea(child: LoginPage()),
+        home: SafeArea(child: LoginPage()),
         routes: {
           '/home': (context) => const SafeArea(child: HomePage()),
           '/info': (context) => const SafeArea(child: InfoPage()),

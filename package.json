@@ -1,0 +1,13 @@
+{
+  "name": "mobile",
+  "version": "0.0.30",
+  "main": "lib/main.dart",
+  "scripts": {
+    "start": "flutter run",
+    "uri-scheme": "uri-scheme open 'com.example.finance_app' --android"
+  },
+  "private": true,
+  "dependencies": {
+    "uri-scheme": "^1.1.0"
+  }
+}

@@ -23,8 +23,8 @@ class GoBackTitleWidget extends StatelessWidget {
         const SizedBox(
           width: 10,
         ),
-        const Text(
-          'Registre-se',
+        Text(
+          '$title',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
         )
       ]),

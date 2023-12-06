@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
             },
             child:
                 const Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-              Text('Ver Todos'),
+              Text('Ver Favoritos'),
               Icon(
                 Icons.chevron_right,
                 color: Colors.white,
