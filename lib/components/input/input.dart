@@ -7,6 +7,7 @@ class InputWidget extends StatelessWidget {
   final double? height;
   final double? width;
   final List<MaskTextInputFormatter>? inputFormatters;
+  final Function(String)? onChanged;
 
   const InputWidget(
       {required this.placeholder,
@@ -14,6 +15,7 @@ class InputWidget extends StatelessWidget {
       this.height,
       this.width,
       this.inputFormatters,
+      this.onChanged,
       super.key});
   static const double radii = 8.0;
 
@@ -23,6 +25,7 @@ class InputWidget extends StatelessWidget {
         width: width ?? MediaQuery.of(context).size.width,
         height: 56,
         child: TextField(
+            onChanged: onChanged,
             inputFormatters: inputFormatters,
             cursorColor: Colors.grey[600],
             style: TextStyle(color: Colors.grey[600]),

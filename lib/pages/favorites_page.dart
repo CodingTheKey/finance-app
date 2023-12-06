@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:finance_app/components/cards/ticker_card.dart';
+import 'package:finance_app/components/go_back_title.dart';
 import 'package:finance_app/components/input/input.dart';
 import 'package:flutter/material.dart';
 
@@ -15,28 +16,7 @@ class FavoritesPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(25),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Row(children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: const Icon(
-                  Icons.chevron_left,
-                  color: Colors.white,
-                  size: 34.0,
-                ),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              const Text(
-                'Favorites',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
-              )
-            ]),
-          ),
+          const GoBackTitleWidget(title: 'Favorites'),
           const SizedBox(
             height: 25,
           ),

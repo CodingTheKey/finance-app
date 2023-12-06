@@ -1,4 +1,5 @@
 import 'package:finance_app/components/charts/line_chart.dart';
+import 'package:finance_app/components/go_back_title.dart';
 import 'package:finance_app/components/variation_badge.dart';
 import 'package:flutter/material.dart';
 
@@ -12,28 +13,7 @@ class InfoPage extends StatelessWidget {
           padding: const EdgeInsets.all(25),
           child: Column(
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Row(children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Icon(
-                      Icons.chevron_left,
-                      color: Colors.white,
-                      size: 34.0,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  const Text(
-                    'View',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
-                  )
-                ]),
-              ),
+              const GoBackTitleWidget(title: 'View'),
               const SizedBox(
                 height: 10,
               ),

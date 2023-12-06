@@ -5,8 +5,17 @@ import 'package:finance_app/pages/login_page.dart';
 import 'package:finance_app/pages/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Supabase.initialize(
+    url: 'https://fkmurbgvolitypveppdp.supabase.co',
+    anonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZrbXVyYmd2b2xpdHlwdmVwcGRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDE3NTE3MTQsImV4cCI6MjAxNzMyNzcxNH0.AnaC4lwV2rsZ7kCEfI3a_rx8aKF7DM1975OkgIVvic0',
+  );
+
   runApp(const MyApp());
 }
 
